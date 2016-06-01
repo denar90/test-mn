@@ -8,8 +8,8 @@ var travis = new Travis({
 });
 
 travis.auth.github.post({
-    github_token: process.env.GH_TOKEN
-    'User-Agent: Travis/1.0'
+    github_token: process.env.GH_TOKEN,
+    'User-Agent': 'Travis/1.0'
 }, function (err, res) {
   console.log(err);
   

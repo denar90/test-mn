@@ -7,8 +7,6 @@ var travis = new Travis({
   version: '2.0.0'
 });
 
-console.log(test);
-
 travis.auth.github.post({
     github_token: process.env.GH_TOKEN
 }, function (err, res) {

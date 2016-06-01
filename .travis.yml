@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "0.12"
-install:
+before_script:
   - npm install travis-ci
-after_success:
+script:
   - node trigger-build.js

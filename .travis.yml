@@ -4,6 +4,7 @@ node_js:
 before_script:
   - npm install travis-ci
 deploy:
+  provider: releases
   "on":
     tags: true
   after_deploy:

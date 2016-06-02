@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - "5"
-before_script:
-  - npm install travis-ci
-script:
-  - node trigger-build.js
+deploy:
+  on:
+    tags: true
+  after_deploy:
+    - npm install travis-ci
+    - node trigger-build.js

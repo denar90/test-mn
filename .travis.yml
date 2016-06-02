@@ -6,5 +6,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key: $GH_TOKEN
+  on:
+    tags: true
 after_deploy:
   - node trigger-build.js

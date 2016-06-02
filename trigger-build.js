@@ -1,6 +1,6 @@
-const Travis = require('travis-ci');
-const repo = "denar90/mn-com-test";
-const travis = new Travis({
+var Travis = require('travis-ci');
+var repo = "denar90/mn-com-test";
+var travis = new Travis({
   version: '2.0.0',
   headers: {
     'User-Agent': 'Travis/1.0'
@@ -9,7 +9,7 @@ const travis = new Travis({
 
 travis.authenticate({
 	github_token: process.env.GH_TOKEN
-}, (err, res) => {
+}, function (err, res) {
 	if (err) {
 		return console.error(err);
 	}

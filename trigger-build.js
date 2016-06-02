@@ -6,7 +6,7 @@ const travis = new Travis({
     'User-Agent': 'Travis/1.0'
   }
 })
-console.log(process.env.GH_TOKEN)
+
 travis.authenticate({
 	github_token: process.env.GH_TOKEN
 }, (err, res) => {

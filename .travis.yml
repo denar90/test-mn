@@ -1,12 +1,12 @@
 language: node_js
 node_js:
   - "5"
-before_script:
-  - npm install travis-ci
 deploy:
   provider: releases
   api_key: $GH_TOKEN
   "on":
     tags: true
-  after_deploy:
+  before_script:
+    - npm install travis-ci
+  script:
     - node trigger-build.js

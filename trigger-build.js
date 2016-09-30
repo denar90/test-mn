@@ -5,7 +5,7 @@ var travis = new Travis({
   headers: {
     'User-Agent': 'Travis/1.0'
   }
-})
+});
 
 travis.authenticate({
 	github_token: process.env.GH_TOKEN

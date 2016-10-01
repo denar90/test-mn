@@ -14,7 +14,7 @@ travis.authenticate({
 		return console.error(err);
 	}
   
-  //get repo builds
+	//get repo builds
 	travis.repos(repo.split('/')[0], repo.split('/')[1]).builds.get(function (err, res) {
 		if (err) {
 			return console.error(err);

@@ -7,6 +7,7 @@ var travis = new Travis({
   }
 });
 
+
 travis.authenticate({
 	github_token: process.env.GH_TOKEN
 }, function (err, res) {

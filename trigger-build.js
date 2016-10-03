@@ -19,8 +19,8 @@ travis.authenticate({
 		if (err) {
 			return console.error(err);
 		}
-    //rebuild latest build
-    travis.requests.post({
+    	//rebuild latest build
+    	travis.requests.post({
 			build_id: res.builds[0].id
 		}, function (err, res) {
 			if (err) {

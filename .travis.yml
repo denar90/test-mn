@@ -4,4 +4,4 @@ node_js:
 before_install:
   - npm install travis-ci
 after_success:
-  - node trigger-build.js
+  - if [[ "$TRAVIS_BRANCH" = "master" ]]; then node trigger-build.js; fi

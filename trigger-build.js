@@ -12,7 +12,7 @@ travis.authenticate({
 	github_token: process.env.GH_TOKEN
 }, function (err, res) {
 	if (err) {
-		return console.error(err);
+	return console.error(err);
 	}
   
 	//get repo builds

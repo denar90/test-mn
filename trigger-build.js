@@ -8,11 +8,20 @@ var travis = new Travis({
 });
 
 var getLastMainBuildId = function(builds) {
-  return builds.forEach(function(build) {
+  var id;
+
+  builds.forEach(function(build) {
     if (!build.pull_request) {
-      return build.id;
+      id = build.id;
+      return true;
     }
   });
+
+  if (!id) {
+    throw new Error('Build id was not found');
+  }
+
+  return id;
 };
 
 

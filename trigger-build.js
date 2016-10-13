@@ -29,6 +29,7 @@ travis.authenticate({
 			return console.error(err);
 		}
     	//rebuild latest build
+		console.log(getLastMainBuildId(res.builds));
     	travis.requests.post({
 			build_id: getLastMainBuildId(res.builds)
 		}, function (err, res) {

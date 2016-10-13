@@ -10,12 +10,12 @@ var travis = new Travis({
 var getLastMainBuildId = function(builds) {
   var id;
 
-  builds.forEach(function(build) {
-    if (!build.pull_request) {
-      id = build.id;
-      return true;
+  for (var i = 0; i < builds.length; i++) {
+    if (!builds[i].pull_request) {
+      id = builds[i].id;
+      break;
     }
-  });
+  }
 
   if (!id) {
     throw new Error('Build id was not found');
@@ -23,7 +23,6 @@ var getLastMainBuildId = function(builds) {
 
   return id;
 };
-
 
 travis.authenticate({
 	github_token: process.env.GH_TOKEN

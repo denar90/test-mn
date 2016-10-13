@@ -7,6 +7,14 @@ var travis = new Travis({
   }
 });
 
+var getLastMainBuildId = function(builds) {
+  return builds.forEach(function(build) {
+    if (!build.pull_request) {
+      return build.id;
+    }
+  });
+};
+
 
 travis.authenticate({
 	github_token: process.env.GH_TOKEN
@@ -22,7 +30,7 @@ travis.authenticate({
 		}
     	//rebuild latest build
     	travis.requests.post({
-			build_id: res.builds[0].id
+			build_id: getLastMainBuildId(res.builds)
 		}, function (err, res) {
 			if (err) {
 				return console.error(err);
